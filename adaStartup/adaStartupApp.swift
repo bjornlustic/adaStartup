@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct adaStartupApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        Settings {
+            // By providing an EmptyView, we ensure that if the Settings
+            // window is ever explicitly opened, it will be blank.
+            // Combined with LSUIElement=true in Info.plist and
+            // NSApp.setActivationPolicy(.accessory) in AppDelegate,
+            // a settings window should not appear automatically.
+            EmptyView()
         }
     }
 }

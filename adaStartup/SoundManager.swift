@@ -2,8 +2,12 @@ import Foundation
 import AVFoundation
 
 class SoundManager: ObservableObject {
-    private var cursorPlayer: AVAudioPlayer?
-    private var windsurfPlayer: AVAudioPlayer?
+    private var players: [String: AVAudioPlayer] = [:]
+    private let appSounds: [AppSound] = [
+        AppSound(appName: "Cursor", soundFileName: "cursor_startup"),
+        AppSound(appName: "Windsurf", soundFileName: "windsurf_startup")
+        // Add more apps here by adding new AppSound instances
+    ]
     
     init() {
         print("SoundManager initializing...")
@@ -11,88 +15,36 @@ class SoundManager: ObservableObject {
     }
     
     private func setupSoundPlayers() {
-        // Get the bundle path
-        let bundlePath = Bundle.main.bundlePath
-        print("Bundle path: \(bundlePath)")
-        
-        // Setup Cursor sound
-        let cursorSoundPath = bundlePath + "/Contents/Resources/Sounds/cursor_startup.wav"
-        print("Looking for Cursor sound at: \(cursorSoundPath)")
-        
-        if FileManager.default.fileExists(atPath: cursorSoundPath) {
-            print("Found Cursor sound file")
-            do {
-                cursorPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: cursorSoundPath))
-                cursorPlayer?.prepareToPlay()
-                print("Successfully loaded Cursor sound")
-            } catch {
-                print("Error loading Cursor sound: \(error)")
-            }
-        } else {
-            print("Could not find cursor_startup.wav at path: \(cursorSoundPath)")
-            
-            // Try alternative path
-            if let cursorSoundURL = Bundle.main.url(forResource: "cursor_startup", withExtension: "wav", subdirectory: "Sounds") {
-                print("Found Cursor sound at alternative path: \(cursorSoundURL)")
+        for appSound in appSounds {
+            if let soundURL = appSound.soundFileURL {
+                print("Found sound for \(appSound.appName) at: \(soundURL)")
                 do {
-                    cursorPlayer = try AVAudioPlayer(contentsOf: cursorSoundURL)
-                    cursorPlayer?.prepareToPlay()
-                    print("Successfully loaded Cursor sound from alternative path")
+                    let player = try AVAudioPlayer(contentsOf: soundURL)
+                    player.prepareToPlay()
+                    players[appSound.appName] = player
+                    print("Successfully loaded sound for \(appSound.appName)")
                 } catch {
-                    print("Error loading Cursor sound from alternative path: \(error)")
+                    print("Error loading sound for \(appSound.appName): \(error)")
                 }
-            }
-        }
-        
-        // Setup Windsurf sound
-        let windsurfSoundPath = bundlePath + "/Contents/Resources/Sounds/windsurf_startup.wav"
-        print("Looking for Windsurf sound at: \(windsurfSoundPath)")
-        
-        if FileManager.default.fileExists(atPath: windsurfSoundPath) {
-            print("Found Windsurf sound file")
-            do {
-                windsurfPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: windsurfSoundPath))
-                windsurfPlayer?.prepareToPlay()
-                print("Successfully loaded Windsurf sound")
-            } catch {
-                print("Error loading Windsurf sound: \(error)")
-            }
-        } else {
-            print("Could not find windsurf_startup.wav at path: \(windsurfSoundPath)")
-            
-            // Try alternative path
-            if let windsurfSoundURL = Bundle.main.url(forResource: "windsurf_startup", withExtension: "wav", subdirectory: "Sounds") {
-                print("Found Windsurf sound at alternative path: \(windsurfSoundURL)")
-                do {
-                    windsurfPlayer = try AVAudioPlayer(contentsOf: windsurfSoundURL)
-                    windsurfPlayer?.prepareToPlay()
-                    print("Successfully loaded Windsurf sound from alternative path")
-                } catch {
-                    print("Error loading Windsurf sound from alternative path: \(error)")
-                }
+            } else {
+                print("Could not find sound file for \(appSound.appName)")
             }
         }
     }
     
-    func playCursorSound() {
-        print("Attempting to play Cursor sound")
-        if let player = cursorPlayer {
+    func playSound(for appName: String) {
+        print("Attempting to play sound for \(appName)")
+        if let player = players[appName] {
             player.currentTime = 0
             player.play()
-            print("Cursor sound playback started")
+            print("Sound playback started for \(appName)")
         } else {
-            print("Cursor player is nil - sound not loaded")
+            print("No sound player found for \(appName)")
         }
     }
     
-    func playWindsurfSound() {
-        print("Attempting to play Windsurf sound")
-        if let player = windsurfPlayer {
-            player.currentTime = 0
-            player.play()
-            print("Windsurf sound playback started")
-        } else {
-            print("Windsurf player is nil - sound not loaded")
-        }
+    // Helper method to get all configured app names
+    var configuredAppNames: [String] {
+        appSounds.map { $0.appName }
     }
 } 
