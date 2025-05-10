@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var soundManager: SoundManager
     @EnvironmentObject var appMonitor: AppMonitor
+    @AppStorage("launchAtLoginEnabled") private var launchAtLoginEnabled: Bool = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -60,6 +61,44 @@ struct ContentView: View {
             }
 
             Spacer(minLength: 0)
+
+            // Settings Section
+            VStack(alignment: .leading, spacing: 10) {
+                Text("SETTINGS")
+                    .font(.system(size: 12, weight: .medium, design: .monospaced))
+                    .foregroundColor(.gray.opacity(0.8))
+                    .padding(.bottom, 5)
+
+                Toggle("Enable Start at Login", isOn: $launchAtLoginEnabled)
+                    .font(.system(size: 14, design: .rounded))
+                    .foregroundColor(.white)
+                    .onChange(of: launchAtLoginEnabled) { _, newValue in
+                        // Placeholder for actual start at login logic
+                        print("Start at Login toggled to: \\(newValue)")
+                        // Here you would call a helper to enable/disable launch at login
+                        // For example: LaunchAtLogin.isEnabled = newValue
+                    }
+                
+                Toggle("Enable Global Mute", isOn: $soundManager.isGloballyMuted)
+                    .font(.system(size: 14, design: .rounded))
+                    .foregroundColor(.white)
+
+                Button {
+                    NSApplication.shared.terminate(nil)
+                } label: {
+                    Text("Exit Application")
+                        .font(.system(size: 14, weight: .medium, design: .rounded))
+                        .foregroundColor(.red)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(.vertical, 8)
+                        .background(Color.white.opacity(0.1))
+                        .cornerRadius(6)
+                }
+                .buttonStyle(.plain) // Use plain button style for custom appearance
+                .padding(.top, 10)
+            }
+            .padding(.horizontal, 20)
+            .padding(.bottom, 10) // Add some padding before the final app info text
 
             Text("Sounds will play upon application launch.")
                 .font(.system(size: 10, design: .rounded))
