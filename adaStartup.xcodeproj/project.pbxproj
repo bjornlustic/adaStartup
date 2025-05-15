@@ -32,10 +32,6 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		84F61CAF2DCEB93C00A69AC9 /* adaStartup */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			explicitFileTypes = {
-				Sounds/cursor_startup.wav = audio.wav;
-				Sounds/windsurf_startup.wav = audio.wav;
-			};
 			path = adaStartup;
 			sourceTree = "<group>";
 		};
