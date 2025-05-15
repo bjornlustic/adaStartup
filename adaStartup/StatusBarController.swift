@@ -32,4 +32,11 @@ class StatusBarController {
             }
         }
     }
+    
+    // Add this method to allow AppDelegate to close the popover
+    func closePopover() {
+        if popover.isShown {
+            popover.performClose(nil)
+        }
+    }
 } 

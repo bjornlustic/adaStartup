@@ -16,6 +16,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    func applicationWillResignActive(_ notification: Notification) {
+        // Close the popover when the app is no longer active
+        statusBarController?.closePopover()
+    }
+    
     func applicationWillTerminate(_ notification: Notification) {
         // Clean up when app is terminating
         statusBarController = nil

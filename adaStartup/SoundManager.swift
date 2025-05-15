@@ -1,14 +1,7 @@
 import Foundation
 import AVFoundation
-import SwiftUI
 
 class SoundManager: ObservableObject {
-    @Published var isGloballyMuted: Bool {
-        didSet {
-            UserDefaults.standard.set(isGloballyMuted, forKey: "isGloballyMuted")
-            print("Global mute set to: \(isGloballyMuted)")
-        }
-    }
     private var players: [String: AVAudioPlayer] = [:]
     private let appSounds: [AppSound] = [
         AppSound(appName: "Cursor", soundFileName: "cursor_startup"),
@@ -17,8 +10,7 @@ class SoundManager: ObservableObject {
     ]
     
     init() {
-        self.isGloballyMuted = UserDefaults.standard.bool(forKey: "isGloballyMuted")
-        print("SoundManager initializing... Global mute: \(isGloballyMuted)")
+        print("SoundManager initializing...")
         setupSoundPlayers()
     }
     
@@ -41,10 +33,6 @@ class SoundManager: ObservableObject {
     }
     
     func playSound(for appName: String) {
-        guard !isGloballyMuted else {
-            print("Global mute is ON. Sound for \(appName) will not play.")
-            return
-        }
         print("Attempting to play sound for \(appName)")
         if let player = players[appName] {
             player.currentTime = 0
