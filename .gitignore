@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+#
+# Build generated
+build/
+DerivedData/
+
+# Various settings
+*.xcscheme
+*.xcuserstate
+
+# Folders to ignore
+appdmg/
+exports/
+adaStartup App/
+xcuserdata/
+*.xcuserdatad 
