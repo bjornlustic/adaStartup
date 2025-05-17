@@ -4,7 +4,7 @@
 
 ## What is it for?
 
-Are you bored of hearing the void when you are coding with AI? adaStartup is here to put some sound to that silent night! It's designed to enhance your AI-assisted coding sessions by providing an auditory experience.
+Are you bored of hearing the void when you are coding with AI? adaStartup is here to put some sound to that silent night! It's designed to enhance your AI-assisted coding sessions by providing an auditory experience!
 
 ## Features
 
