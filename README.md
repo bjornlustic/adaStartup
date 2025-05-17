@@ -12,7 +12,7 @@ Are you bored of hearing the void when you are coding with AI? adaStartup is her
 
 ## Installation
 
-1.  Download the latest release from the [releases page](https://github.com/bjornlustic/adaStartup/releases/tag/Release).
+1.  Download the latest release from the [releases page](https://github.com/bjornlustic/adaStartup/releases).
 2.  Open the downloaded `.dmg` file.
 3.  Drag `adaStartup.app` to your Applications folder.
 4. Have fun.

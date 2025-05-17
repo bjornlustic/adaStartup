@@ -16,6 +16,5 @@ DerivedData/
 # Folders to ignore
 appdmg/
 exports/
-adaStartup App/
 xcuserdata/
 *.xcuserdatad 
