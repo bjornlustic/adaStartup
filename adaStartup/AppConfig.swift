@@ -22,17 +22,8 @@ struct AppConfig: Identifiable, Codable, Equatable {
 
     // Computed property for the icon, not saved directly in JSON
     var icon: NSImage? {
-        // Attempt 1: Use appPath with NSWorkspace if appPath is valid and exists
-        if !appPath.isEmpty && FileManager.default.fileExists(atPath: appPath) {
-            let image = NSWorkspace.shared.icon(forFile: appPath)
-            // NSImage.isValid is not a standard property. A simple check is if size > 0.
-            // NSWorkspace.shared.icon(forFile:) for an app should return its actual icon.
-            if image.size.width > 0 && image.size.height > 0 {
-                return image
-            }
-        }
-
-        // Attempt 2: Use bundleIdentifier to find app path, then NSWorkspace
+        
+        // Attempt 1: Use bundleIdentifier to find app path, then NSWorkspace
         // This is useful if appPath was incorrect, or app moved but is findable by bundleID.
         if let appURL = NSWorkspace.shared.urlForApplication(withBundleIdentifier: bundleIdentifier) {
             if FileManager.default.fileExists(atPath: appURL.path) {
@@ -40,6 +31,16 @@ struct AppConfig: Identifiable, Codable, Equatable {
                 if image.size.width > 0 && image.size.height > 0 {
                     return image
                 }
+            }
+        }
+        
+        // Attempt 2: Use appPath with NSWorkspace if appPath is valid and exists
+        if !appPath.isEmpty && FileManager.default.fileExists(atPath: appPath) {
+            let image = NSWorkspace.shared.icon(forFile: appPath)
+            // NSImage.isValid is not a standard property. A simple check is if size > 0.
+            // NSWorkspace.shared.icon(forFile:) for an app should return its actual icon.
+            if image.size.width > 0 && image.size.height > 0 {
+                return image
             }
         }
         

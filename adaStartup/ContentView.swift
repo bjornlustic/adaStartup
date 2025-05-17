@@ -427,6 +427,9 @@ struct SettingsView: View {
     @ObservedObject var configManager: ConfigurationManager
     @EnvironmentObject var soundManager: SoundManager // Add SoundManager
     
+    // Access LaunchAtLoginManager state
+    @StateObject private var launchAtLoginManager = LaunchAtLoginManager.shared
+    
     // Remove selectedContent binding
     // @Binding var selectedContent: ContentView.ContentAreaView 
 
@@ -616,8 +619,13 @@ struct SettingsView: View {
                     .frame(minHeight: 100) // Give some min height to the list
                 }
                 
-                // "Reset All Configurations to Defaults" button is now removed.
-                // The "Default" preset in the list achieves similar functionality by loading defaults.
+                // Launch at Login Toggle
+                // Divider().padding(.vertical) // Separator before this new setting
+
+                Toggle(isOn: $launchAtLoginManager.isLaunchAtLoginEnabled) {
+                    Text("Launch at Login")
+                }
+                .padding(.top)
 
                 // Quit Application Button
                 Divider().padding(.vertical)
@@ -634,7 +642,7 @@ struct SettingsView: View {
                 .buttonStyle(PlainButtonStyle())
                 .padding(.top)
 
-                Spacer() // Pushes content to the top
+                //Spacer() // Pushes content to the top
             }
             .padding() // Add padding to the VStack content
         }

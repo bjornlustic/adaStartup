@@ -39,6 +39,7 @@ struct adaStartupApp: App {
         // AppDelegate needs to pass them to its internal components if they need them.
         // For now, assuming AppDelegate will get AppMonitor instance that includes configManager.
         appDelegate.appMonitor = self.appMonitor 
+        appDelegate.configManager = self.configManager // Ensure ConfigurationManager is passed to AppDelegate
         appDelegate.mainWindowID = self.mainWindowID
         // No direct need for appDelegate.configManager if appMonitor handles interactions with it.
     }

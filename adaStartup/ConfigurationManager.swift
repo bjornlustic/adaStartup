@@ -11,8 +11,8 @@ class ConfigurationManager: ObservableObject {
     // or if the user wants to reset to defaults.
     // Ensure actual bundle IDs and paths are correct for these defaults if they are to work.
     private var defaultAppConfigs: [AppConfig] = [
-        AppConfig(appName: "Cursor", bundleIdentifier: "com.cursor.Cursor", appPath: "/Applications/Cursor.app", soundFileName: "depth"),
-        AppConfig(appName: "Windsurf", bundleIdentifier: "com.example.Windsurf", appPath: "/Applications/Windsurf.app", soundFileName: "wooly"),
+        AppConfig(appName: "Cursor", bundleIdentifier: "com.todesktop.230313mzl4w4u92", appPath: "/Applications/Cursor.app", soundFileName: "depth"),
+        AppConfig(appName: "Windsurf", bundleIdentifier: "com.exafunction.windsurf", appPath: "/Applications/Windsurf.app", soundFileName: "wooly"),
         AppConfig(appName: "Visual Studio Code", bundleIdentifier: "com.microsoft.VSCode", appPath: "/Applications/Visual Studio Code.app", soundFileName: "sparse")
     ]
 

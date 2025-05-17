@@ -6,27 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		84F61CBC2DCEB93D00A69AC9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84F61CA52DCEB93C00A69AC9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84F61CAC2DCEB93C00A69AC9;
-			remoteInfo = adaStartup;
-		};
-		84F61CC62DCEB93D00A69AC9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84F61CA52DCEB93C00A69AC9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84F61CAC2DCEB93C00A69AC9;
-			remoteInfo = adaStartup;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		84F61CAD2DCEB93C00A69AC9 /* adaStartup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = adaStartup.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		84F61CBB2DCEB93D00A69AC9 /* adaStartupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = adaStartupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		84F61CC52DCEB93D00A69AC9 /* adaStartupUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = adaStartupUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,34 +16,10 @@
 			path = adaStartup;
 			sourceTree = "<group>";
 		};
-		84F61CBE2DCEB93D00A69AC9 /* adaStartupTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = adaStartupTests;
-			sourceTree = "<group>";
-		};
-		84F61CC82DCEB93D00A69AC9 /* adaStartupUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = adaStartupUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		84F61CAA2DCEB93C00A69AC9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84F61CB82DCEB93D00A69AC9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84F61CC22DCEB93D00A69AC9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,8 +33,6 @@
 			isa = PBXGroup;
 			children = (
 				84F61CAF2DCEB93C00A69AC9 /* adaStartup */,
-				84F61CBE2DCEB93D00A69AC9 /* adaStartupTests */,
-				84F61CC82DCEB93D00A69AC9 /* adaStartupUITests */,
 				84F61CAE2DCEB93C00A69AC9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,8 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				84F61CAD2DCEB93C00A69AC9 /* adaStartup.app */,
-				84F61CBB2DCEB93D00A69AC9 /* adaStartupTests.xctest */,
-				84F61CC52DCEB93D00A69AC9 /* adaStartupUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,52 +70,6 @@
 			productReference = 84F61CAD2DCEB93C00A69AC9 /* adaStartup.app */;
 			productType = "com.apple.product-type.application";
 		};
-		84F61CBA2DCEB93D00A69AC9 /* adaStartupTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 84F61CD22DCEB93D00A69AC9 /* Build configuration list for PBXNativeTarget "adaStartupTests" */;
-			buildPhases = (
-				84F61CB72DCEB93D00A69AC9 /* Sources */,
-				84F61CB82DCEB93D00A69AC9 /* Frameworks */,
-				84F61CB92DCEB93D00A69AC9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				84F61CBD2DCEB93D00A69AC9 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				84F61CBE2DCEB93D00A69AC9 /* adaStartupTests */,
-			);
-			name = adaStartupTests;
-			packageProductDependencies = (
-			);
-			productName = adaStartupTests;
-			productReference = 84F61CBB2DCEB93D00A69AC9 /* adaStartupTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		84F61CC42DCEB93D00A69AC9 /* adaStartupUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 84F61CD52DCEB93D00A69AC9 /* Build configuration list for PBXNativeTarget "adaStartupUITests" */;
-			buildPhases = (
-				84F61CC12DCEB93D00A69AC9 /* Sources */,
-				84F61CC22DCEB93D00A69AC9 /* Frameworks */,
-				84F61CC32DCEB93D00A69AC9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				84F61CC72DCEB93D00A69AC9 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				84F61CC82DCEB93D00A69AC9 /* adaStartupUITests */,
-			);
-			name = adaStartupUITests;
-			packageProductDependencies = (
-			);
-			productName = adaStartupUITests;
-			productReference = 84F61CC52DCEB93D00A69AC9 /* adaStartupUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -175,14 +82,6 @@
 				TargetAttributes = {
 					84F61CAC2DCEB93C00A69AC9 = {
 						CreatedOnToolsVersion = 16.3;
-					};
-					84F61CBA2DCEB93D00A69AC9 = {
-						CreatedOnToolsVersion = 16.3;
-						TestTargetID = 84F61CAC2DCEB93C00A69AC9;
-					};
-					84F61CC42DCEB93D00A69AC9 = {
-						CreatedOnToolsVersion = 16.3;
-						TestTargetID = 84F61CAC2DCEB93C00A69AC9;
 					};
 				};
 			};
@@ -201,28 +100,12 @@
 			projectRoot = "";
 			targets = (
 				84F61CAC2DCEB93C00A69AC9 /* adaStartup */,
-				84F61CBA2DCEB93D00A69AC9 /* adaStartupTests */,
-				84F61CC42DCEB93D00A69AC9 /* adaStartupUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		84F61CAB2DCEB93C00A69AC9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84F61CB92DCEB93D00A69AC9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84F61CC32DCEB93D00A69AC9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -239,34 +122,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		84F61CB72DCEB93D00A69AC9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84F61CC12DCEB93D00A69AC9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		84F61CBD2DCEB93D00A69AC9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 84F61CAC2DCEB93C00A69AC9 /* adaStartup */;
-			targetProxy = 84F61CBC2DCEB93D00A69AC9 /* PBXContainerItemProxy */;
-		};
-		84F61CC72DCEB93D00A69AC9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 84F61CAC2DCEB93C00A69AC9 /* adaStartup */;
-			targetProxy = 84F61CC62DCEB93D00A69AC9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		84F61CCD2DCEB93D00A69AC9 /* Debug */ = {
@@ -395,6 +251,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = adaStartup/adaStartup.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -410,7 +267,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ada.adaStartup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ada.adaStartup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -424,6 +281,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = adaStartup/adaStartup.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -439,79 +297,11 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ada.adaStartup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ada.adaStartup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		84F61CD32DCEB93D00A69AC9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 23E5C2Z268;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ada.adaStartupTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/adaStartup.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/adaStartup";
-			};
-			name = Debug;
-		};
-		84F61CD42DCEB93D00A69AC9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 23E5C2Z268;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ada.adaStartupTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/adaStartup.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/adaStartup";
-			};
-			name = Release;
-		};
-		84F61CD62DCEB93D00A69AC9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 23E5C2Z268;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ada.adaStartupUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = adaStartup;
-			};
-			name = Debug;
-		};
-		84F61CD72DCEB93D00A69AC9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 23E5C2Z268;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ada.adaStartupUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = adaStartup;
 			};
 			name = Release;
 		};
@@ -532,24 +322,6 @@
 			buildConfigurations = (
 				84F61CD02DCEB93D00A69AC9 /* Debug */,
 				84F61CD12DCEB93D00A69AC9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		84F61CD22DCEB93D00A69AC9 /* Build configuration list for PBXNativeTarget "adaStartupTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				84F61CD32DCEB93D00A69AC9 /* Debug */,
-				84F61CD42DCEB93D00A69AC9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		84F61CD52DCEB93D00A69AC9 /* Build configuration list for PBXNativeTarget "adaStartupUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				84F61CD62DCEB93D00A69AC9 /* Debug */,
-				84F61CD72DCEB93D00A69AC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

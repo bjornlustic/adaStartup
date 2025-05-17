@@ -3,7 +3,6 @@ import AppKit
 
 class StatusBarController {
     private var statusItem: NSStatusItem
-    private var popover: NSPopover?
     private var onStatusItemClicked: () -> Void
     
     init(onStatusItemClicked: @escaping () -> Void) {
@@ -31,11 +30,10 @@ class StatusBarController {
     
     private func constructMenu() -> NSMenu {
         let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        
+        let quitMenuItem = NSMenuItem(title: "Quit adaStartup", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        menu.addItem(quitMenuItem)
+        
         return menu
     }
-    
-    // The closePopover method is no longer needed as there's no popover.
-    // We can remove it or leave it if it might be repurposed later, but for now, it's unused.
-    // func closePopover() { }
 } 

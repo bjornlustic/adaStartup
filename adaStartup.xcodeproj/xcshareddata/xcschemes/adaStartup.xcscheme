@@ -21,6 +21,20 @@
                ReferencedContainer = "container:adaStartup.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "84261AFC2DD84293000E1AC3"
+               BuildableName = "adaStartupLauncher.app"
+               BlueprintName = "adaStartupLauncher"
+               ReferencedContainer = "container:adaStartup.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

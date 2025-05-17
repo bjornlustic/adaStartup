@@ -6,6 +6,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // Hold references to shared instances
     var soundManager: SoundManager?
     var appMonitor: AppMonitor?
+    var configManager: ConfigurationManager?
     
     var mainWindowID: String?
     private var openWindowAction: SwiftUI.OpenWindowAction?
@@ -43,13 +44,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    func applicationWillFinishLaunching(_ notification: Notification) {
+        // Set the activation policy as early as possible.
+        // This is crucial for preventing the Dock icon from appearing,
+        // even briefly, when the app is launched at login.
+        // This complements the LSUIElement=true in Info.plist.
+        if NSApp.activationPolicy() != .accessory {
+            NSApp.setActivationPolicy(.accessory)
+        }
+    }
+    
     func applicationDidFinishLaunching(_ notification: Notification) {
-        NSApp.setActivationPolicy(.accessory)
-        
         // Ensure shared instances (set by adaStartupApp) are available.
         // AppMonitor instance received here is already configured with its dependencies.
-        guard self.soundManager != nil, self.appMonitor != nil else {
-            fatalError("SoundManager and/or AppMonitor not initialized in AppDelegate by adaStartupApp")
+        guard self.soundManager != nil, 
+              self.appMonitor != nil,
+              let configManager = self.configManager else {
+            fatalError("SoundManager, AppMonitor, and/or ConfigurationManager not initialized in AppDelegate by adaStartupApp")
+        }
+
+        // First launch check
+        let defaults = UserDefaults.standard
+        let hasLaunchedBeforeKey = "hasLaunchedBefore"
+
+        if !defaults.bool(forKey: hasLaunchedBeforeKey) {
+            print("First launch detected. Loading default preset.")
+            configManager.loadPreset(name: "Default") // "Default" is the name used in ConfigurationManager
+            defaults.set(true, forKey: hasLaunchedBeforeKey)
+            // Optionally, if you want to ensure these changes are immediately written to disk:
+            // defaults.synchronize() // Though usually not strictly necessary immediately
         }
         
         statusBarController = StatusBarController {
