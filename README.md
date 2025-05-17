@@ -25,6 +25,7 @@ Are you bored of hearing the void when you are coding with AI? adaStartup is her
 2.  Add apps with the + button on the bottom.
 3. Add custom sounds for your liking.
 4. Save presets.
+5. Enable or disable start at login!
 
 ## License
 
